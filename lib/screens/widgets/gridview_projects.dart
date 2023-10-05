@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../datas/projects.dart';
 
 class GridviewOfProjects extends StatelessWidget {
@@ -22,39 +21,42 @@ class GridviewOfProjects extends StatelessWidget {
       ),
       delegate: SliverChildBuilderDelegate(
         (context, index) {
-          return Card(
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    height: size.height * 0.3,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: NetworkImage(projects[index].imgUrl),
-                        fit: BoxFit.cover,
+          return Padding(
+            padding: const EdgeInsets.symmetric(horizontal:15.0),
+            child: Card(
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      height: size.height * 0.3,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: NetworkImage(projects[index].imgUrl),
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
-                  ),
-                  Padding(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 8.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        SizedBox(height: size.height * 0.01),
-                        Text(
-                          projects[index].name,
-                          style: const TextStyle(
-                            fontWeight: FontWeight.bold,
+                    Padding(
+                      padding:
+                          const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          SizedBox(height: size.height * 0.01),
+                          Text(
+                            projects[index].name,
+                            style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                        SizedBox(height: size.height * 0.01),
-                        Text(projects[index].description),
-                      ],
+                          SizedBox(height: size.height * 0.01),
+                          Text(projects[index].description),
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           );

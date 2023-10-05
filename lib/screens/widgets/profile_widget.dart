@@ -16,7 +16,7 @@ class Profile extends StatelessWidget {
     return SizedBox(
       child: LayoutBuilder(
         builder: (context, constraints) {
-          final isMobile = constraints.maxWidth < 600;
+          final isMobile = constraints.maxWidth < 800;
           return isMobile
               ? Column(
                   crossAxisAlignment: CrossAxisAlignment.center,

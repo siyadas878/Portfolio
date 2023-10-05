@@ -10,7 +10,9 @@ class AppBarForBigScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return SliverAppBar(
+      toolbarHeight: size.height*0.07,
       pinned: true,
         title: const Text('I\'am Ziyad'),
         leading: null,
